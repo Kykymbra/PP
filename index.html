@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - МКУ "Центр физкультурно-массовой и спортивной работы"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://www.sportvokrug.ru/images/emblems/100/100475.jpg" type="image/jpeg">
+    <style>
+        :root {
+            --primary-color: #005b82;
+            --secondary-color: #e63946;
+            --accent-color: #457b9d;
+            --light-bg: #f1faee;
+            --dark-text: #1d3557;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 25px;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .contact-section {
+            margin-left: -10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 18px;
+            min-width: 25px;
+            text-align: center;
+        }
+        
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+        
+        .contact-value {
+            font-weight: 500;
+        }
+        
+        .email-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .email-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 i {
+            font-size: 1.2em;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill {
+            background-color: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .skill:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: var(--accent-color);
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .experience-item::before, .education-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+        
+        .experience-item::after, .education-item::after {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 20px;
+            bottom: -25px;
+            width: 1px;
+            background-color: #ddd;
+        }
+        
+        .experience-item:last-child::after, .education-item:last-child::after {
+            display: none;
+        }
+        
+        .period {
+            display: inline-block;
+            background-color: var(--light-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .header-logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 60px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            margin: 10px 0 0;
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .org-details {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            min-width: 180px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            border-bottom-color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        
+        .btn-danger {
+            background-color: #dc3545;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Стили для формы создания/редактирования */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        /* Стили для загрузки фото */
+        .photo-upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .photo-preview {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 15px;
+            display: none;
+        }
+        
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .upload-btn {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        /* Стили для административной панели */
+        .admin-panel {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-toolbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .resume-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .resume-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .resume-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .resume-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .resume-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .resume-actions .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .login-container h2 {
+            margin-top: 0;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+        }
+        
+        .close {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .admin-login-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .admin-login-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .admin-login-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .admin-login-link:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .back-to-admin {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-to-admin:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .contact-section {
+                margin-left: 0;
+            }
+            
+            .resume-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-login-link, .back-to-admin {
+                bottom: 10px;
+                right: 10px;
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            
+            .header-logo {
+                position: static;
+                margin-bottom: 15px;
+            }
+            
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Кнопка входа в админ-панель -->
+    <button id="admin-login-btn" class="admin-login-btn" title="Вход для администратора" onclick="showLoginPage()">
+        <i class="fas fa-user-shield"></i>
+    </button>
+    
+    <!-- Ссылка входа в админ-панель (альтернативный вариант) -->
+    <a id="admin-login-link" class="admin-login-link" title="Вход для администратора" onclick="showLoginPage()" style="display: none;">
+        <i class="fas fa-user-shield"></i>
+        <span>Админ-панель</span>
+    </a>
+    
+    <!-- Кнопка возврата в админ-панель -->
+    <a id="back-to-admin" class="back-to-admin" title="Вернуться в админ-панель" onclick="showAdminPanel()" style="display: none;">
+        <i class="fas fa-arrow-left"></i>
+        <span>В админ-панель</span>
+    </a>
+
+    <!-- Основной контейнер приложения -->
+    <div id="app">
+        <!-- Страница входа -->
+        <div id="login-page" class="login-container" style="display: none;">
+            <h2>Вход в систему</h2>
+            <div id="login-error" class="alert alert-danger" style="display: none;"></div>
+            <div class="form-group">
+                <label for="login-username">Логин</label>
+                <input type="text" id="login-username" class="form-control" placeholder="Введите ваш логин">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Пароль</label>
+                <input type="password" id="login-password" class="form-control" placeholder="Введите ваш пароль">
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" onclick="login()">Войти</button>
+                <button class="btn btn-secondary" onclick="hideLoginPage()">Отмена</button>
+            </div>
+        </div>
+        
+        <!-- Административная панель -->
+        <div id="admin-panel" class="admin-panel" style="display: none;">
+            <div class="admin-header">
+                <h2>Панель администратора</h2>
+                <div>
+                    <button class="btn btn-primary" onclick="showCreateResumeForm()">
+                        <i class="fas fa-plus"></i> Создать резюме
+                    </button>
+                    <button class="btn btn-secondary" onclick="showResumeView()">
+                        <i class="fas fa-eye"></i> Просмотр
+                    </button>
+                    <button class="btn btn-danger" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Выйти
+                    </button>
+                </div>
+            </div>
+            
+            <div class="admin-toolbar">
+                <h3>Управление резюме</h3>
+                <div>
+                    <button class="btn btn-primary" onclick="showCreateResumeForm()">
+                        <i class="fas fa-plus"></i> Добавить
+                    </button>
+                </div>
+            </div>
+            
+            <div id="resume-list" class="resume-list">
+                <!-- Список резюме будет загружен здесь -->
+            </div>
+        </div>
+        
+        <!-- Форма создания/редактирования резюме -->
+        <div id="resume-form-container" class="form-container" style="display: none;">
+            <h2 id="resume-form-title">Создание нового резюме</h2>
+            <form id="resume-form">
+                <input type="hidden" id="resume-id">
+                
+                <div class="photo-upload-container">
+                    <img id="photo-preview" class="photo-preview" alt="Предпросмотр фото">
+                    <div class="upload-btn-wrapper">
+                        <button type="button" class="upload-btn">
+                            <i class="fas fa-upload"></i> Загрузить фото
+                        </button>
+                        <input type="file" id="photo-upload" accept="image/*">
+                    </div>
+                    <small>или укажите URL:</small>
+                    <input type="text" id="photo-url" class="form-control" style="margin-top: 5px;" 
+                           value="https://www.sportvokrug.ru/images/emblems/100/100475.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label for="full-name">ФИО</label>
+                    <input type="text" id="full-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Должность</label>
+                    <input type="text" id="position" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="text" id="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Адрес</label>
+                    <input type="text" id="address" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения</label>
+                    <input type="text" id="birthdate" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="about">Обо мне</label>
+                    <textarea id="about" class="form-control" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Опыт работы (каждый пункт с новой строки, формат: Компания\nПериод\nДолжность\n- Обязанность 1\n- Обязанность 2)</label>
+                    <textarea id="experience" class="form-control" rows="10">МКУ "Центр физкультурно-массовой и спортивной работы"
+Июнь 2018 - настоящее время
+Специалист по спортивно-массовой работе
+- Организация и проведение спортивных мероприятий
+- Координация работы спортивных секций
+- Разработка программ по привлечению населения к спорту
+- Подготовка отчетной документации
+- Взаимодействие с образовательными учреждениями
+
+ДЮСШ Ленинградского района
+Сентябрь 2012 - Май 2018
+Тренер-преподаватель
+- Проведение тренировочных занятий
+- Подготовка спортсменов к соревнованиям
+- Организация спортивных сборов
+- Разработка тренировочных программ</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Образование (каждый пункт с новой строки, формат: Учебное заведение\nПериод\nСпециальность\nКвалификация)</label>
+                    <textarea id="education" class="form-control" rows="8">Кубанский государственный университет физической культуры, спорта и туризма
+2003 - 2008
+Физическая культура и спорт
+Специалист по физической культуре и спорту
+
+Курсы повышения квалификации
+2019
+Современные технологии организации массовых спортивных мероприятий
+Объем: 72 часа</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Навыки (через запятую)</label>
+                    <input type="text" id="skills" class="form-control" value="Организация мероприятий, Работа с документами, Тренерская работа, Ведение отчетности">
+                </div>
+                
+                <div class="form-group">
+                    <label>Достижения (через запятую)</label>
+                    <input type="text" id="achievements" class="form-control" value="Грамота Министерства спорта Краснодарского края (2020), Участник всероссийского форума 'Развитие массового спорта' (2019), Благодарность от администрации Ленинградского района (2021), Повышение посещаемости секций на 25% (2022), Золотой знак ГТО (2022)">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="hideResumeForm()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Просмотр резюме -->
+        <div id="resume-view" class="container">
+            <aside class="sidebar">
+                <img id="resume-photo" src="https://www.sportvokrug.ru/images/emblems/100/100475.jpg" alt="Фото профиля" class="profile-photo">
+                
+                <div class="section contact-section">
+                    <h2><i class="fas fa-id-card"></i> Контакты</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">Телефон</span>
+                                <span id="resume-phone" class="contact-value">+7 (861) 456-78-90</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">Адрес</span>
+                                <span id="resume-address" class="contact-value">ст. Ленинградская, Краснодарский край</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <a id="resume-email" href="mailto:sportcenter@len-rayon.ru" class="contact-value email-link">sportcenter@len-rayon.ru</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-birthday-cake"></i></div>
+                            <div class="contact-text">
+                                <span class="contact-label">Дата рождения</span>
+                                <span id="resume-birthdate" class="contact-value">15 мая 1985 г.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-chart-bar"></i> Навыки</h2>
+                    <div id="resume-skills">
+                        <p>Организация мероприятий <span class="badge badge-success">Эксперт</span></p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                        
+                        <p>Работа с документами <span class="badge badge-success">Продвинутый</span></p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        
+                        <p>Тренерская работа <span class="badge badge-success">Эксперт</span></p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-language"></i> Языки</h2>
+                    <div>
+                        <p>Русский <span class="badge badge-success">Родной</span></p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
+                        
+                        <p>Английский <span class="badge badge-warning">B1</span></p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+            <main class="main-content">
+                <div class="header">
+                    <img src="https://www.sportvokrug.ru/images/emblems/100/100475.jpg" alt="Логотип спортивного центра" class="header-logo">
+                    <h1 id="resume-full-name">ИВАНОВ ИВАН ИВАНОВИЧ</h1>
+                    <p id="resume-position">Специалист по спортивно-массовой работе</p>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-user-tie"></i> Обо мне</h2>
+                    <p id="resume-about">Профессиональный специалист в области физкультурно-массовой и спортивной работы с более чем 10-летним опытом. Обладаю глубокими знаниями в организации спортивных мероприятий, тренировочного процесса и административной работе. Стремлюсь к развитию спортивной инфраструктуры района и популяризации здорового образа жизни среди населения.</p>
+                </div>
+                
+                <div class="section">
+                    <div class="tabs">
+                        <div class="tab active" onclick="openTab(event, 'experience')">Опыт работы</div>
+                        <div class="tab" onclick="openTab(event, 'projects')">Проекты</div>
+                    </div>
+                    
+                    <div id="experience" class="tab-content active">
+                        <div id="resume-experience">
+                            <!-- Опыт работы будет загружен здесь -->
+                        </div>
+                    </div>
+                    
+                    <div id="projects" class="tab-content">
+                        <div class="experience-item">
+                            <h3>Проект "Спортивное лето"</h3>
+                            <span class="period">2022</span>
+                            <p>Организация серии спортивных мероприятий для детей в летний период</p>
+                            <ul>
+                                <li>Охват: 300+ участников</li>
+                                <li>5 спортивных дисциплин</li>
+                                <li>Привлечение 3 спонсоров</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <h3>Программа "Активное долголетие"</h3>
+                            <span class="period">2020-2021</span>
+                            <p>Разработка и внедрение физкультурной программы для старшего поколения</p>
+                            <ul>
+                                <li>Регулярные занятия для 50+ участников</li>
+                                <li>Снижение заболеваемости на 15% в группе</li>
+                                <li>Положительные отзывы от участников</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-graduation-cap"></i> Образование</h2>
+                    <div id="resume-education">
+                        <!-- Образование будет загружено здесь -->
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-trophy"></i> Достижения</h2>
+                    <div id="resume-achievements" class="skills">
+                        <!-- Достижения будут загружены здесь -->
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><i class="fas fa-file-alt"></i> Дополнительная информация</h2>
+                    <ul>
+                        <li>Водительское удостоверение категории B</li>
+                        <li>Готов к командировкам</li>
+                        <li>Возможность работы в выходные дни</li>
+                        <li>Наличие медицинской книжки</li>
+                        <li>Знак ГТО золотого уровня</li>
+                    </ul>
+                    <button class="btn" style="margin-top: 20px;" onclick="downloadResume()">
+                        <i class="fas fa-download"></i> Скачать резюме (PDF)
+                    </button>
+                    
+                    <!-- Кнопка редактирования (только для админа) -->
+                    <button id="edit-resume-btn" class="btn btn-primary" style="margin-top: 20px; display: none;" onclick="editCurrentResume()">
+                        <i class="fas fa-edit"></i> Редактировать резюме
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Модальное окно подтверждения -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="confirm-title">Подтверждение</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="confirm-message">Вы уверены, что хотите выполнить это действие?</div>
+            <div class="form-actions" style="margin-top: 20px;">
+                <button class="btn btn-secondary" onclick="closeModal()">Отмена</button>
+                <button id="confirm-action-btn" class="btn btn-primary">Подтвердить</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Состояние приложения
+        const state = {
+            currentUser: null,
+            resumes: [],
+            currentResumeId: null,
+            isAdmin: false,
+            uploadedPhoto: null
+        };
+        
+        // Инициализация приложения
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверяем, авторизован ли пользователь
+            const user = localStorage.getItem('resumeUser');
+            if (user) {
+                state.currentUser = JSON.parse(user);
+                state.isAdmin = true;
+                showAdminPanel();
+                loadResumes();
+            } else {
+                showResumeView();
+                loadDemoResume();
+            }
+            
+            // Настройка формы
+            document.getElementById('resume-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                saveResume();
+            });
+            
+            // Настройка загрузки фото
+            document.getElementById('photo-upload').addEventListener('change', function(e) {
+                handlePhotoUpload(e);
+            });
+            
+            // Настройка кнопки входа для админа
+            updateAdminLoginButton();
+        });
+        
+        // Обработка загрузки фото
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const preview = document.getElementById('photo-preview');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                
+                // Сохраняем загруженное фото в состоянии
+                state.uploadedPhoto = e.target.result;
+                
+                // Автоматически заполняем поле URL
+                document.getElementById('photo-url').value = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        // Обновление кнопки входа для админа
+        function updateAdminLoginButton() {
+            if (state.isAdmin) {
+                document.getElementById('admin-login-btn').style.display = 'none';
+                document.getElementById('admin-login-link').style.display = 'none';
+                
+                // Показываем кнопку возврата в админку на странице просмотра
+                if (document.getElementById('resume-view').style.display !== 'none') {
+                    document.getElementById('back-to-admin').style.display = 'flex';
+                } else {
+                    document.getElementById('back-to-admin').style.display = 'none';
+                }
+            } else {
+                // Показываем более заметную кнопку на странице просмотра резюме
+                if (document.getElementById('resume-view').style.display !== 'none') {
+                    document.getElementById('admin-login-btn').style.display = 'none';
+                    document.getElementById('admin-login-link').style.display = 'flex';
+                    document.getElementById('back-to-admin').style.display = 'none';
+                } else {
+                    document.getElementById('admin-login-btn').style.display = 'flex';
+                    document.getElementById('admin-login-link').style.display = 'none';
+                    document.getElementById('back-to-admin').style.display = 'none';
+                }
+            }
+        }
+        
+        // Функции для работы с интерфейсом
+        function showLoginPage() {
+            hideAllPages();
+            document.getElementById('login-page').style.display = 'block';
+            document.getElementById('admin-login-btn').style.display = 'none';
+            document.getElementById('admin-login-link').style.display = 'none';
+            document.getElementById('back-to-admin').style.display = 'none';
+        }
+        
+        function hideLoginPage() {
+            document.getElementById('login-page').style.display = 'none';
+            updateAdminLoginButton();
+            document.getElementById('login-username').value = '';
+            document.getElementById('login-password').value = '';
+            document.getElementById('login-error').style.display = 'none';
+        }
+        
+        function showAdminPanel() {
+            hideAllPages();
+            document.getElementById('admin-panel').style.display = 'block';
+            updateAdminLoginButton();
+            loadResumes();
+        }
+        
+        function hideAdminPanel() {
+            document.getElementById('admin-panel').style.display = 'none';
+        }
+        
+        function showResumeView() {
+            hideAllPages();
+            document.getElementById('resume-view').style.display = 'grid';
+            updateAdminLoginButton();
+            
+            if (state.isAdmin) {
+                document.getElementById('edit-resume-btn').style.display = 'block';
+            } else {
+                document.getElementById('edit-resume-btn').style.display = 'none';
+            }
+        }
+        
+        function showResumeForm() {
+            hideAllPages();
+            document.getElementById('resume-form-container').style.display = 'block';
+            document.getElementById('admin-login-btn').style.display = 'none';
+            document.getElementById('admin-login-link').style.display = 'none';
+            document.getElementById('back-to-admin').style.display = 'none';
+        }
+        
+        function hideResumeForm() {
+            document.getElementById('resume-form-container').style.display = 'none';
+            if (state.isAdmin) {
+                showAdminPanel();
+            } else {
+                showResumeView();
+            }
+        }
+        
+        function hideAllPages() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('admin-panel').style.display = 'none';
+            document.getElementById('resume-view').style.display = 'none';
+            document.getElementById('resume-form-container').style.display = 'none';
+        }
+
+        // Функции для работы с резюме
+        function loadDemoResume() {
+            const demoResume = {
+                id: 'demo',
+                fullName: 'ИВАНОВ ИВАН ИВАНОВИЧ',
+                position: 'Специалист по спортивно-массовой работе',
+                photoUrl: 'https://www.sportvokrug.ru/images/emblems/100/100475.jpg',
+                phone: '+7 (861) 456-78-90',
+                address: 'ст. Ленинградская, Краснодарский край',
+                email: 'sportcenter@len-rayon.ru',
+                birthdate: '15 мая 1985 г.',
+                about: 'Профессиональный специалист в области физкультурно-массовой и спортивной работы с более чем 10-летним опытом. Обладаю глубокими знаниями в организации спортивных мероприятий, тренировочного процесса и административной работе. Стремлюсь к развитию спортивной инфраструктуры района и популяризации здорового образа жизни среди населения.',
+                experience: [
+                    {
+                        company: 'МКУ "Центр физкультурно-массовой и спортивной работы"',
+                        period: 'Июнь 2018 - настоящее время',
+                        position: 'Специалист по спортивно-массовой работе',
+                        description: [
+                            'Организация и проведение 15+ ежегодных спортивных мероприятий в Ленинградском районе с участием 500+ человек',
+                            'Координация работы 8 спортивных секций для разных возрастных групп',
+                            'Разработка и внедрение программы "Спорт для всех" для привлечения населения к регулярным занятиям',
+                            'Подготовка отчетной документации для вышестоящих органов и спонсоров',
+                            'Взаимодействие с образовательными учреждениями по вопросам физкультурно-массовой работы'
+                        ]
+                    },
+                    {
+                        company: 'ДЮСШ Ленинградского района',
+                        period: 'Сентябрь 2012 - Май 2018',
+                        position: 'Тренер-преподаватель',
+                        description: [
+                            'Проведение тренировочных занятий для групп 15-20 человек',
+                            'Подготовка спортсменов к соревнованиям регионального уровня',
+                            'Организация летних спортивных сборов',
+                            'Разработка индивидуальных тренировочных программ'
+                        ]
+                    }
+                ],
+                education: [
+                    {
+                        institution: 'Кубанский государственный университет физической культуры, спорта и туризма',
+                        period: '2003 - 2008',
+                        specialty: 'Физическая культура и спорт',
+                        qualification: 'Специалист по физической культуре и спорту'
+                    },
+                    {
+                        institution: 'Курсы повышения квалификации',
+                        period: '2019',
+                        specialty: '"Современные технологии организации массовых спортивных мероприятий"',
+                        qualification: 'Объем: 72 часа'
+                    }
+                ],
+                skills: ['Организация мероприятий', 'Работа с документами', 'Тренерская работа'],
+                achievements: [
+                    'Грамота Министерства спорта Краснодарского края (2020)',
+                    'Участник всероссийского форума "Развитие массового спорта" (2019)',
+                    'Благодарность от администрации Ленинградского района (2021)',
+                    'Повышение посещаемости секций на 25% (2022)',
+                    'Золотой знак ГТО (2022)'
+                ]
+            };
+            
+            displayResume(demoResume);
+        }
+        
+        function loadResumes() {
+            const savedResumes = localStorage.getItem('resumes');
+            if (savedResumes) {
+                state.resumes = JSON.parse(savedResumes);
+                renderResumeList();
+            } else {
+                state.resumes = [{
+                    id: '1',
+                    fullName: 'ИВАНОВ ИВАН ИВАНОВИЧ',
+                    position: 'Специалист по спортивно-массовой работе',
+                    photoUrl: 'https://www.sportvokrug.ru/images/emblems/100/100475.jpg',
+                    phone: '+7 (861) 456-78-90',
+                    address: 'ст. Ленинградская, Краснодарский край',
+                    email: 'sportcenter@len-rayon.ru',
+                    birthdate: '15 мая 1985 г.',
+                    about: 'Профессиональный специалист в области физкультурно-массовой и спортивной работы с более чем 10-летним опытом. Обладаю глубокими знаниями в организации спортивных мероприятий, тренировочного процесса и административной работе. Стремлюсь к развитию спортивной инфраструктуры района и популяризации здорового образа жизни среди населения.',
+                    experience: [
+                        {
+                            company: 'МКУ "Центр физкультурно-массовой и спортивной работы"',
+                            period: 'Июнь 2018 - настоящее время',
+                            position: 'Специалист по спортивно-массовой работе',
+                            description: [
+                                'Организация и проведение 15+ ежегодных спортивных мероприятий в Ленинградском районе с участием 500+ человек',
+                                'Координация работы 8 спортивных секций для разных возрастных групп',
+                                'Разработка и внедрение программы "Спорт для всех" для привлечения населения к регулярным занятиям',
+                                'Подготовка отчетной документации для вышестоящих органов и спонсоров',
+                                'Взаимодействие с образовательными учреждениями по вопросам физкультурно-массовой работы'
+                            ]
+                        },
+                        {
+                            company: 'ДЮСШ Ленинградского района',
+                            period: 'Сентябрь 2012 - Май 2018',
+                            position: 'Тренер-преподаватель',
+                            description: [
+                                'Проведение тренировочных занятий для групп 15-20 человек',
+                                'Подготовка спортсменов к соревнованиям регионального уровня',
+                                'Организация летних спортивных сборов',
+                                'Разработка индивидуальных тренировочных программ'
+                            ]
+                        }
+                    ],
+                    education: [
+                        {
+                            institution: 'Кубанский государственный университет физической культуры, спорта и туризма',
+                            period: '2003 - 2008',
+                            specialty: 'Физическая культура и спорт',
+                            qualification: 'Специалист по физической культуре и спорту'
+                        },
+                        {
+                            institution: 'Курсы повышения квалификации',
+                            period: '2019',
+                            specialty: '"Современные технологии организации массовых спортивных мероприятий"',
+                            qualification: 'Объем: 72 часа'
+                        }
+                    ],
+                    skills: ['Организация мероприятий', 'Работа с документами', 'Тренерская работа'],
+                    achievements: [
+                        'Грамота Министерства спорта Краснодарского края (2020)',
+                        'Участник всероссийского форума "Развитие массового спорта" (2019)',
+                        'Благодарность от администрации Ленинградского района (2021)',
+                        'Повышение посещаемости секций на 25% (2022)',
+                        'Золотой знак ГТО (2022)'
+                    ]
+                }];
+                saveResumesToStorage();
+                renderResumeList();
+            }
+        }
+        
+        function renderResumeList() {
+            const container = document.getElementById('resume-list');
+            container.innerHTML = '';
+            
+            if (state.resumes.length === 0) {
+                container.innerHTML = '<p>Нет сохраненных резюме. Создайте новое резюме.</p>';
+                return;
+            }
+            
+            state.resumes.forEach(resume => {
+                const card = document.createElement('div');
+                card.className = 'resume-card';
+                card.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <img src="${resume.photoUrl}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h3>${resume.fullName}</h3>
+                            <p style="margin: 0;">${resume.position}</p>
+                        </div>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="btn btn-primary" onclick="viewResume('${resume.id}')">
+                            <i class="fas fa-eye"></i> Просмотр
+                        </button>
+                        <button class="btn" onclick="editResume('${resume.id}')">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                        <button class="btn btn-danger" onclick="confirmDeleteResume('${resume.id}')">
+                            <i class="fas fa-trash"></i> Удалить
+                        </button>
+                        <button class="btn" onclick="downloadResumeById('${resume.id}')">
+                            <i class="fas fa-download"></i> Скачать PDF
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        function showCreateResumeForm() {
+            document.getElementById('resume-form-title').textContent = 'Создание нового резюме';
+            document.getElementById('resume-id').value = '';
+            
+            // Очищаем форму
+            document.getElementById('full-name').value = '';
+            document.getElementById('position').value = '';
+            document.getElementById('photo-url').value = 'https://www.sportvokrug.ru/images/emblems/100/100475.jpg';
+            document.getElementById('phone').value = '';
+            document.getElementById('address').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('birthdate').value = '';
+            document.getElementById('about').value = '';
+            document.getElementById('experience').value = '';
+            document.getElementById('education').value = '';
+            document.getElementById('skills').value = '';
+            document.getElementById('achievements').value = '';
+            
+            // Сбрасываем загруженное фото
+            const preview = document.getElementById('photo-preview');
+            preview.src = '';
+            preview.style.display = 'none';
+            state.uploadedPhoto = null;
+            
+            showResumeForm();
+        }
+        
+        function editResume(id) {
+            const resume = state.resumes.find(r => r.id === id);
+            if (!resume) return;
+            
+            document.getElementById('resume-form-title').textContent = 'Редактирование резюме';
+            document.getElementById('resume-id').value = resume.id;
+            
+            // Заполняем форму данными
+            document.getElementById('full-name').value = resume.fullName;
+            document.getElementById('position').value = resume.position;
+            document.getElementById('photo-url').value = resume.photoUrl;
+            document.getElementById('phone').value = resume.phone;
+            document.getElementById('address').value = resume.address;
+            document.getElementById('email').value = resume.email;
+            document.getElementById('birthdate').value = resume.birthdate;
+            document.getElementById('about').value = resume.about;
+            
+            // Устанавливаем превью фото
+            const preview = document.getElementById('photo-preview');
+            if (resume.photoUrl.startsWith('data:image')) {
+                preview.src = resume.photoUrl;
+                preview.style.display = 'block';
+                state.uploadedPhoto = resume.photoUrl;
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+                state.uploadedPhoto = null;
+            }
+            
+            // Преобразуем опыт работы в текст
+            let experienceText = '';
+            resume.experience.forEach(exp => {
+                experienceText += `${exp.company}\n${exp.period}\n${exp.position}\n`;
+                exp.description.forEach(item => {
+                    experienceText += `- ${item}\n`;
+                });
+                experienceText += '\n';
+            });
+            document.getElementById('experience').value = experienceText.trim();
+            
+            // Преобразуем образование в текст
+            let educationText = '';
+            resume.education.forEach(edu => {
+                educationText += `${edu.institution}\n${edu.period}\n${edu.specialty}\n${edu.qualification}\n\n`;
+            });
+            document.getElementById('education').value = educationText.trim();
+            
+            // Навыки и достижения
+            document.getElementById('skills').value = resume.skills.join(', ');
+            document.getElementById('achievements').value = resume.achievements.join(', ');
+            
+            showResumeForm();
+        }
+        
+        function editCurrentResume() {
+            if (!state.currentResumeId) return;
+            editResume(state.currentResumeId);
+        }
+        
+        function saveResume() {
+            const id = document.getElementById('resume-id').value || generateId();
+            const fullName = document.getElementById('full-name').value;
+            const position = document.getElementById('position').value;
+            
+            // Используем загруженное фото или URL
+            let photoUrl = document.getElementById('photo-url').value;
+            if (state.uploadedPhoto) {
+                photoUrl = state.uploadedPhoto;
+            }
+            
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const about = document.getElementById('about').value;
+            
+            // Парсим опыт работы
+            const experienceText = document.getElementById('experience').value;
+            const experience = parseExperience(experienceText);
+            
+            // Парсим образование
+            const educationText = document.getElementById('education').value;
+            const education = parseEducation(educationText);
+            
+            // Получаем навыки и достижения
+            const skills = document.getElementById('skills').value.split(',').map(s => s.trim()).filter(s => s);
+            const achievements = document.getElementById('achievements').value.split(',').map(a => a.trim()).filter(a => a);
+            
+            const resume = {
+                id,
+                fullName,
+                position,
+                photoUrl,
+                phone,
+                address,
+                email,
+                birthdate,
+                about,
+                experience,
+                education,
+                skills,
+                achievements
+            };
+            
+            // Обновляем или добавляем резюме
+            const index = state.resumes.findIndex(r => r.id === id);
+            if (index >= 0) {
+                state.resumes[index] = resume;
+            } else {
+                state.resumes.push(resume);
+            }
+            
+            saveResumesToStorage();
+            renderResumeList();
+            hideResumeForm();
+            
+            // Если редактировали текущее резюме, обновляем его отображение
+            if (state.currentResumeId === id) {
+                displayResume(resume);
+            }
+        }
+        
+        function parseExperience(text) {
+            if (!text.trim()) return [];
+            
+            const experience = [];
+            const blocks = text.split('\n\n').filter(block => block.trim());
+            
+            blocks.forEach(block => {
+                const lines = block.split('\n').filter(line => line.trim());
+                if (lines.length < 3) return;
+                
+                const company = lines[0];
+                const period = lines[1];
+                const position = lines[2];
+                const description = [];
+                
+                for (let i = 3; i < lines.length; i++) {
+                    let line = lines[i].trim();
+                    if (line.startsWith('- ')) {
+                        line = line.substring(2);
+                    }
+                    description.push(line);
+                }
+                
+                experience.push({
+                    company,
+                    period,
+                    position,
+                    description
+                });
+            });
+            
+            return experience;
+        }
+        
+        function parseEducation(text) {
+            if (!text.trim()) return [];
+            
+            const education = [];
+            const blocks = text.split('\n\n').filter(block => block.trim());
+            
+            blocks.forEach(block => {
+                const lines = block.split('\n').filter(line => line.trim());
+                if (lines.length < 2) return;
+                
+                const institution = lines[0];
+                const period = lines[1];
+                const specialty = lines.length > 2 ? lines[2] : '';
+                const qualification = lines.length > 3 ? lines[3] : '';
+                
+                education.push({
+                    institution,
+                    period,
+                    specialty,
+                    qualification
+                });
+            });
+            
+            return education;
+        }
+        
+        function viewResume(id) {
+            const resume = state.resumes.find(r => r.id === id);
+            if (!resume) return;
+            
+            state.currentResumeId = id;
+            displayResume(resume);
+            showResumeView();
+        }
+        
+        function displayResume(resume) {
+            document.getElementById('resume-full-name').textContent = resume.fullName;
+            document.getElementById('resume-position').textContent = resume.position;
+            document.getElementById('resume-photo').src = resume.photoUrl;
+            document.getElementById('resume-phone').textContent = resume.phone;
+            document.getElementById('resume-address').textContent = resume.address;
+            document.getElementById('resume-email').textContent = resume.email;
+            document.getElementById('resume-email').href = `mailto:${resume.email}`;
+            document.getElementById('resume-birthdate').textContent = resume.birthdate;
+            document.getElementById('resume-about').textContent = resume.about;
+            
+            // Отображаем опыт работы
+            const experienceContainer = document.getElementById('resume-experience');
+            experienceContainer.innerHTML = '';
+            
+            resume.experience.forEach(exp => {
+                const item = document.createElement('div');
+                item.className = 'experience-item';
+                
+                let descriptionHtml = '';
+                exp.description.forEach(desc => {
+                    descriptionHtml += `<li>${desc}</li>`;
+                });
+                
+                item.innerHTML = `
+                    <h3>${exp.company}</h3>
+                    <span class="period">${exp.period}</span>
+                    <p><strong>Должность:</strong> ${exp.position}</p>
+                    <ul>${descriptionHtml}</ul>
+                `;
+                
+                experienceContainer.appendChild(item);
+            });
+            
+            // Отображаем образование
+            const educationContainer = document.getElementById('resume-education');
+            educationContainer.innerHTML = '';
+            
+            resume.education.forEach(edu => {
+                const item = document.createElement('div');
+                item.className = 'education-item';
+                
+                item.innerHTML = `
+                    <h3>${edu.institution}</h3>
+                    <span class="period">${edu.period}</span>
+                    <p>${edu.specialty}</p>
+                    <p>${edu.qualification}</p>
+                `;
+                
+                educationContainer.appendChild(item);
+            });
+            
+            // Отображаем навыки
+            const skillsContainer = document.getElementById('resume-skills');
+            if (skillsContainer) {
+                skillsContainer.innerHTML = '';
+                
+                resume.skills.forEach(skill => {
+                    const skillElement = document.createElement('p');
+                    skillElement.innerHTML = `${skill} <span class="badge badge-success">Продвинутый</span>`;
+                    
+                    const progressContainer = document.createElement('div');
+                    progressContainer.className = 'progress-container';
+                    
+                    const progressBar = document.createElement('div');
+                    progressBar.className = 'progress-bar';
+                    progressBar.style.width = `${Math.floor(Math.random() * 30) + 70}%`;
+                    
+                    progressContainer.appendChild(progressBar);
+                    
+                    skillsContainer.appendChild(skillElement);
+                    skillsContainer.appendChild(progressContainer);
+                });
+            }
+            
+            // Отображаем достижения
+            const achievementsContainer = document.getElementById('resume-achievements');
+            if (achievementsContainer) {
+                achievementsContainer.innerHTML = '';
+                
+                resume.achievements.forEach(achievement => {
+                    const skill = document.createElement('div');
+                    skill.className = 'skill';
+                    skill.textContent = achievement;
+                    achievementsContainer.appendChild(skill);
+                });
+            }
+        }
+        
+        function confirmDeleteResume(id) {
+            const resume = state.resumes.find(r => r.id === id);
+            if (!resume) return;
+            
+            showModal(
+                'Удаление резюме',
+                `Вы уверены, что хотите удалить резюме ${resume.fullName}?`,
+                () => deleteResume(id)
+            );
+        }
+        
+        function deleteResume(id) {
+            state.resumes = state.resumes.filter(r => r.id !== id);
+            saveResumesToStorage();
+            renderResumeList();
+            closeModal();
+            
+            // Если удалили текущее резюме, возвращаемся в админку
+            if (state.currentResumeId === id) {
+                state.currentResumeId = null;
+                showAdminPanel();
+            }
+        }
+        
+        // Функции для работы с пользователем
+        function login() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (username === 'admin' && password === 'admin123') {
+                state.currentUser = { username, role: 'admin' };
+                state.isAdmin = true;
+                localStorage.setItem('resumeUser', JSON.stringify(state.currentUser));
+                
+                hideLoginPage();
+                showAdminPanel();
+                loadResumes();
+                updateAdminLoginButton();
+            } else {
+                showLoginError('Неверные учетные данные');
+            }
+        }
+        
+        function logout() {
+            state.currentUser = null;
+            state.isAdmin = false;
+            state.currentResumeId = null;
+            localStorage.removeItem('resumeUser');
+            
+            hideAdminPanel();
+            showResumeView();
+            loadDemoResume();
+            updateAdminLoginButton();
+        }
+        
+        function showLoginError(message) {
+            const errorElement = document.getElementById('login-error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Функции для генерации PDF
+        function downloadResume() {
+            if (!state.currentResumeId) {
+                alert("Нет текущего резюме для скачивания");
+                return;
+            }
+            
+            const resume = state.resumes.find(r => r.id === state.currentResumeId);
+            if (!resume) {
+                alert("Резюме не найдено");
+                return;
+            }
+            
+            generatePDF(resume);
+        }
+        
+        function downloadResumeById(id) {
+            const resume = state.resumes.find(r => r.id === id);
+            if (!resume) {
+                alert("Резюме не найдено");
+                return;
+            }
+            
+            generatePDF(resume);
+        }
+        
+        function generatePDF(resume) {
+            // Создаем временный элемент для генерации PDF
+            const pdfContainer = document.createElement('div');
+            pdfContainer.style.width = '210mm';
+            pdfContainer.style.padding = '20mm';
+            pdfContainer.style.fontFamily = 'Arial, sans-serif';
+            pdfContainer.style.backgroundColor = 'white';
+            
+            // Заполняем содержимое резюме
+            pdfContainer.innerHTML = `
+                <style>
+                    .pdf-header {
+                        text-align: center;
+                        margin-bottom: 20px;
+                        padding-bottom: 10px;
+                        border-bottom: 2px solid #005b82;
+                        position: relative;
+                    }
+                    .pdf-header h1 {
+                        color: #005b82;
+                        margin: 0;
+                    }
+                    .pdf-header p {
+                        color: #457b9d;
+                        margin: 5px 0 0;
+                        font-size: 18px;
+                    }
+                    .pdf-logo {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 50px;
+                    }
+                    .pdf-section {
+                        margin-bottom: 15px;
+                    }
+                    .pdf-section h2 {
+                        color: #005b82;
+                        border-bottom: 1px solid #005b82;
+                        padding-bottom: 5px;
+                        margin: 20px 0 10px;
+                    }
+                    .pdf-contact-item {
+                        margin-bottom: 5px;
+                    }
+                    .pdf-contact-label {
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 100px;
+                    }
+                    .pdf-experience-item {
+                        margin-bottom: 15px;
+                    }
+                    .pdf-experience-period {
+                        font-style: italic;
+                        color: #666;
+                    }
+                    .pdf-skills {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5px;
+                    }
+                    .pdf-skill {
+                        background-color: #f1faee;
+                        padding: 3px 8px;
+                        border-radius: 3px;
+                        font-size: 12px;
+                    }
+                </style>
+                
+                <div class="pdf-header">
+                    <img src="https://www.sportvokrug.ru/images/emblems/100/100475.jpg" class="pdf-logo" alt="Логотип">
+                    <h1>${resume.fullName}</h1>
+                    <p>${resume.position}</p>
+                </div>
+                
+                <div style="display: flex; gap: 30px;">
+                    <div style="flex: 1;">
+                        <div class="pdf-section">
+                            <h2>Контактная информация</h2>
+                            <div class="pdf-contact-item">
+                                <span class="pdf-contact-label">Телефон:</span>
+                                <span>${resume.phone}</span>
+                            </div>
+                            <div class="pdf-contact-item">
+                                <span class="pdf-contact-label">Адрес:</span>
+                                <span>${resume.address}</span>
+                            </div>
+                            <div class="pdf-contact-item">
+                                <span class="pdf-contact-label">Email:</span>
+                                <span>${resume.email}</span>
+                            </div>
+                            <div class="pdf-contact-item">
+                                <span class="pdf-contact-label">Дата рождения:</span>
+                                <span>${resume.birthdate}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pdf-section">
+                            <h2>Навыки</h2>
+                            <div class="pdf-skills">
+                                ${resume.skills.map(skill => `<span class="pdf-skill">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 0 0 150px;">
+                        <img src="${resume.photoUrl}" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid #005b82;">
+                    </div>
+                </div>
+                
+                <div class="pdf-section">
+                    <h2>Обо мне</h2>
+                    <p>${resume.about}</p>
+                </div>
+                
+                <div class="pdf-section">
+                    <h2>Опыт работы</h2>
+                    ${resume.experience.map(exp => `
+                        <div class="pdf-experience-item">
+                            <h3>${exp.company}</h3>
+                            <div class="pdf-experience-period">${exp.period}</div>
+                            <div><strong>Должность:</strong> ${exp.position}</div>
+                            <ul style="margin-top: 5px; padding-left: 20px;">
+                                ${exp.description.map(desc => `<li>${desc}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="pdf-section">
+                    <h2>Образование</h2>
+                    ${resume.education.map(edu => `
+                        <div style="margin-bottom: 10px;">
+                            <div><strong>${edu.institution}</strong></div>
+                            <div>${edu.period}</div>
+                            <div>${edu.specialty}</div>
+                            <div>${edu.qualification}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="pdf-section">
+                    <h2>Достижения</h2>
+                    <ul style="padding-left: 20px;">
+                        ${resume.achievements.map(ach => `<li>${ach}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            
+            // Добавляем контейнер в документ (невидимо)
+            pdfContainer.style.position = 'absolute';
+            pdfContainer.style.left = '-9999px';
+            document.body.appendChild(pdfContainer);
+            
+            // Генерируем PDF
+            html2canvas(pdfContainer, {
+                scale: 2,
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210; // A4 width in mm
+                const pageHeight = 295; // A4 height in mm
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Сохраняем PDF
+                pdf.save(`Резюме_${resume.fullName.replace(/\s+/g, '_')}.pdf`);
+                
+                // Удаляем временный контейнер
+                document.body.removeChild(pdfContainer);
+            });
+        }
+        
+        // Вспомогательные функции
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+        
+        function saveResumesToStorage() {
+            localStorage.setItem('resumes', JSON.stringify(state.resumes));
+        }
+        
+        // Функции для работы с модальными окнами
+        function showModal(title, message, callback) {
+            document.getElementById('confirm-title').textContent = title;
+            document.getElementById('confirm-message').textContent = message;
+            
+            const confirmBtn = document.getElementById('confirm-action-btn');
+            confirmBtn.onclick = function() {
+                callback();
+                closeModal();
+            };
+            
+            document.getElementById('confirm-modal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('confirm-modal').style.display = 'none';
+        }
+        
+        // Функции для вкладок
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            const tabs = document.getElementsByClassName("tab");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Глобальные функции для доступа из HTML
+        window.login = login;
+        window.logout = logout;
+        window.openTab = openTab;
+        window.downloadResume = downloadResume;
+        window.downloadResumeById = downloadResumeById;
+        window.showCreateResumeForm = showCreateResumeForm;
+        window.hideResumeForm = hideResumeForm;
+        window.editCurrentResume = editCurrentResume;
+        window.closeModal = closeModal;
+        window.showLoginPage = showLoginPage;
+        window.hideLoginPage = hideLoginPage;
+        window.showResumeView = showResumeView;
+        window.viewResume = viewResume;
+        window.confirmDeleteResume = confirmDeleteResume;
+        window.editResume = editResume;
+        window.showAdminPanel = showAdminPanel;
+    </script>
+    
+    <!-- Подключаем необходимые библиотеки -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        // Инициализация jsPDF
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+</body>
+</html>
